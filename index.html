@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime World</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo2.png" alt="logo">
+            </div>
+
+            <!-- Hamburger Button -->
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#new">News</a></li>
+                <li><a href="#popular">Popular</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About Us</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <h1 class="welcome">Anime Guides ◎ We List. You Binge.</h1>
+        <!-- Search Section -->
+        <div class="search-container">
+            <input type="text" placeholder="Search Anime..." class="search-input">
+            <button class="filter-btn">Filter</button>
+        </div>
+
+        <!-- ACTION -->
+        <section class="genre-section" id="action">
+            <h2 class="genre-title">Action</h2>
+            <div class="anime-container" id="action-list"></div>
+        </section>
+
+        <!-- ROMANCE -->
+        <section class="genre-section" id="romance">
+            <h2 class="genre-title">Romance</h2>
+            <div class="anime-container" id="romance-list"></div>
+        </section>
+
+        <!-- COMEDY -->
+        <section class="genre-section" id="comedy">
+            <h2 class="genre-title">Comedy</h2>
+            <div class="anime-container" id="comedy-list"></div>
+        </section>
+
+        <!-- FANTASY -->
+        <section class="genre-section" id="fantasy">
+            <h2 class="genre-title">Fantasy</h2>
+            <div class="anime-container" id="fantasy-list"></div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-text">
+                <p>© holo, all rights reserved</p>
+                <p>Welcome to holo, your ultimate destination for best anime Knowledge.</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="animeData.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+
+</body>
+
+</html>

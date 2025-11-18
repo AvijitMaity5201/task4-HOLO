@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    height: 40px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #ff6600;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.welcome {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #f0efef;
+}
+
+/* Search Bar Styling */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.search-input {
+    width: 60%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+    background: #d1cece;
+    color: #000;
+}
+
+.filter-btn {
+    padding: 11px 20px;
+    border: 1px solid #050505;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    background: #1a1a1a;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fdf7f7;
+}
+
+.filter-btn:hover {
+    background: #ff6600;
+}
+
+/* Genre Section */
+.genre-section {
+    margin-bottom: 40px;
+}
+
+.genre-title {
+    font-size: 1.2rem;
+    color: #ff6600;
+    margin-bottom: 1rem;
+}
+
+/* Anime Scrolling Container */
+.anime-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
+
+    /* hide scrollbars on Firefox + Edge */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+}
+
+/* hide scrollbar completely on Chrome */
+.anime-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Anime Card */
+.anime-card {
+    position: relative;
+    min-width: 220px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #111;
+}
+
+/* Hover Glow */
+.anime-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(17, 16, 16, 0.5);
+}
+
+/* Image */
+.anime-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+.anime-card:hover img {
+    filter: brightness(60%);
+}
+
+/* Hover Overlay */
+.hover-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 1rem;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.anime-card:hover .hover-details {
+    height: 100%;
+    opacity: 1;
+}
+
+.hover-details h3 {
+    color: #ff6600;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.hover-details p {
+    font-size: 0.85rem;
+    color: #ccc;
+    line-height: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    padding: 1.5rem 2rem;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-text p {
+    margin: 4px 0;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff6600;
+}
+
+/* --------------------------- */
+/* Mobile-Friendly Professional Media Queries */
+/* --------------------------- */
+@media (max-width: 1024px) {
+    main {
+        padding: 1.5rem;
+    }
+
+    .welcome {
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .search-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .search-input {
+        width: 70%;
+    }
+
+    .filter-btn {
+        width: 25%;
+    }
+
+    .genre-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+/* Hamburger Menu for Mobile (Right Slide) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        z-index: 200;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; /* hidden by default off-screen */
+        width: 50%;   /* covers half the screen */
+        height: 100vh; /* full height */
+        background-color: #1a1a1a;
+        padding-top: 4rem;
+        gap: 1.5rem;
+        transition: right 0.3s ease;
+        z-index: 150;
+    }
+
+    .nav-links.active {
+        right: 0; /* slides in */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    /* Optional: semi-transparent overlay behind menu */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 140;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}
+
+
+/* Default spacing for desktop */
+.search-container {
+    margin-bottom: 40px; /* space below search bar */
+}
+
+.genre-section {
+    margin-top: 30px; /* space between genres */
+}
+
+/* Mobile-friendly spacing */
+@media (max-width: 480px) {
+    .welcome {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .search-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        margin-bottom: 40px; /* proper space below search bar */
+    }
+
+    .search-input {
+        width: calc(70% - 5px);
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .filter-btn {
+        width: calc(30% - 5px);
+        font-size: 14px;
+        padding: 9px 12px;
+        border-radius: 0 5px 5px 0;
+    }
+
+    .anime-card {
+        min-width: 120px;
+        height: 180px;
+    }
+
+    .hover-details h3 {
+        font-size: 0.85rem;
+    }
+
+    .hover-details p {
+        font-size: 0.65rem;
+    }
+
+    .genre-section {
+        margin-top: 20px; /* proper space between genres */
+    }
+
+    .genre-title {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+}
+
