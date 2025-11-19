@@ -1,6 +1,4 @@
-// ---------------------------
-// 1. Smooth scrolling
-// ---------------------------
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -14,9 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ---------------------------
-// 2. Generate Cards from animeData.js
-// ---------------------------
+
 function renderAnime() {
     const genres = Object.keys(animeData);
 
